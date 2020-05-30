@@ -2,12 +2,12 @@ const express = require('express');
 
 const app = express();
 
-app.get('/getImage', (req, res) => {
-
+app.get('/getMedia', (req, res) => {
+    //TODO: Integrate DB
 })
 
-app.get('/getVideo', (req, res) => {
-
+app.post('/vote', (req, res) => {
+    //TODO: Integrate DB
 })
 
 module.exports = app;

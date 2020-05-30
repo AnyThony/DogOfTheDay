@@ -8,15 +8,26 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-      <NavBar/>
-      <div id="feed-container">
-        <div class="row">
-          <div class="col s4"><Media/></div>
-          <div class="col s4"><Media/></div>
-          <div class="col s4"><Media/></div>
+        <NavBar />
+        <div id="feed-container">
+          <div class="row">
+            <div class="col s3">
+              <Media />
+            </div>
+            <div class="col s3">
+              <Media />
+            </div>
+            <div class="col s3">
+              <Media />
+            </div>
+            <div class="col s3">
+              <Media />
+            </div>
+            <div class="col s3">
+              <Media />
+            </div>
+          </div>
         </div>
-        
-      </div>
       </div>
     );
   }

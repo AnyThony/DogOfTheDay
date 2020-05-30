@@ -3,7 +3,7 @@
 
 }
 #feed-container .row {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .card-title {
     color: #111 !important;
@@ -16,7 +16,7 @@
     display: block;
     -o-object-fit: contain;
     object-fit: contain;
-    max-height:300px;
+    max-width: "100%";
     width: auto;
     height: auto;
 }

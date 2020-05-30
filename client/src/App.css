@@ -12,12 +12,18 @@
   background-color: #ccc
 }
 
+#feed-container::-webkit-scrollbar {
+  display: none;
+}
+
+
 #feed-container {
   -webkit-box-shadow: -1px 4px 48px -13px rgba(0,0,0,0.75);
 -moz-box-shadow: -1px 4px 48px -13px rgba(0,0,0,0.75);
 box-shadow: -1px 4px 48px -13px rgba(0,0,0,0.75);
-  height: calc(100% - 100px);
+  height: calc(100% - 70px);
   width: 75%;
   background-color: #eee;
   margin: auto;
+  overflow-y: scroll;
 }
