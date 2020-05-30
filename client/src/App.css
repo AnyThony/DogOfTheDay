@@ -26,4 +26,7 @@ box-shadow: -1px 4px 48px -13px rgba(0,0,0,0.75);
   background-color: #eee;
   margin: auto;
   overflow-y: scroll;
+  display: flex !important;
+  flex-flow: wrap;
+  justify-content: center;
 }

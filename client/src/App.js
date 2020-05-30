@@ -12,6 +12,7 @@ class App extends Component {
     this.setState({
       data: []
     })
+
     this._asyncRequest = fetch(`http://localhost/api/getMedia`).then(
       externalData => {
         this._asyncRequest = null;
@@ -28,20 +29,17 @@ class App extends Component {
     console.log("cell", this.state.data)
     let cells = this.state.data.map(data => 
       (
-        <div class="col s3">
+
           <Media
             imageSource={data.img_source}
             id={data._id}
             votes={data.votes}
           />
-        </div>
+
       )
     )
     console.log("element cells", cells)
-    return (
-    <div class="row">
-      {cells}
-    </div>);
+    return cells;
   }
 
   render() {

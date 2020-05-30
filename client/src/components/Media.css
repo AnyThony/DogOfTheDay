@@ -2,6 +2,13 @@
     width: 100% !important;
 
 }
+
+.row {
+    width: 25%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 #feed-container .row {
     margin-top: 10px;
 }
@@ -23,7 +30,7 @@
     display: block;
     -o-object-fit: contain;
     object-fit: contain;
-    max-width: "100%";
+    max-width: 300px !important;
     width: auto;
     height: auto;
 }
