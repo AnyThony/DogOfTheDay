@@ -7,7 +7,6 @@ import "./Media.css"
 class Media extends Component {
   constructor(props) {
     super(props)
-    //placeholder
     this.state = {
       imageSource: null,
       numVotes: null,
@@ -15,7 +14,7 @@ class Media extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState({
       imageSource: this.props.imageSource,
       numVotes: this.props.votes,
@@ -38,7 +37,9 @@ class Media extends Component {
               <p>{this.state.numVotes} votes</p>
             </div>
             <div class="card-action">
-              <a href="#">Vote</a>
+              <a class="waves-effect waves-light btn-small">
+                <span>VOTE</span>
+              </a>
             </div>
           </div>
         </div>

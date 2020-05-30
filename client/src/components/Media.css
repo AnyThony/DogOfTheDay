@@ -8,9 +8,16 @@
 .card-title {
     color: #111 !important;
 }
+
 .card-action a{
-    color: #ee6e73 !important;
+    background-color: #ee6e73 !important;
+    height: 30px !important;
+    text-align: center;
+    width: 90px;
+    margin: auto;
+    display: block;
 }
+
 .card-image img{
     margin: auto;
     display: block;
