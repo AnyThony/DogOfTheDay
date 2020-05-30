@@ -21,6 +21,8 @@ npm run client
 
 1.0.0
 
+Thanks to Brad Traversy for the React Starter Code
+
 ### License
 
 This project is licensed under the MIT License
