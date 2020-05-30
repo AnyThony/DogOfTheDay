@@ -1,6 +1,8 @@
 ## Quick Start
 
 ``` bash
+In config.js, replace API_KEY_HERE with your tenor api key
+
 # Install dependencies for server
 npm install
 
@@ -20,6 +22,8 @@ npm run client
 ```
 
 1.0.0
+
+Thanks to Brad Traversy for the React Starter Code
 
 ### License
 
