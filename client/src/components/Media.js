@@ -9,9 +9,18 @@ class Media extends Component {
     super(props)
     //placeholder
     this.state = {
-      imageSource: "https://media2.giphy.com/media/9rtpurjbqiqZXbBBet/giphy.gif?cid=ecf05e478d6128cf36c3102763fd4bdf294f0584a878efbf&rid=giphy.gif",
-      numVotes: 0
+      imageSource: null,
+      numVotes: null,
+      mediaId: null
     }
+  }
+
+  componentDidMount(){
+    this.setState({
+      imageSource: this.props.imageSource,
+      numVotes: this.props.votes,
+      mediaId: this.props.id
+    })
   }
 
   render() {
