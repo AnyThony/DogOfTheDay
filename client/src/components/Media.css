@@ -1,0 +1,22 @@
+.row .col.s12 {
+    width: 100% !important;
+
+}
+#feed-container .row {
+    margin-top: 20px;
+}
+.card-title {
+    color: #111 !important;
+}
+.card-action a{
+    color: #ee6e73 !important;
+}
+.card-image img{
+    margin: auto;
+    display: block;
+    -o-object-fit: contain;
+    object-fit: contain;
+    max-height:300px;
+    width: auto;
+    height: auto;
+}
