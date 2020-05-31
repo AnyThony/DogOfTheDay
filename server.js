@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-const port = 80;
+const port = process.env.PORT || 80;
 app.listen(port, () => `Server running on port ${port}`);
 
 async function connectDB() {
