@@ -20,7 +20,7 @@ async function refreshContent(){
     await dailyContent.deleteMany({})
     await vote.deleteMany({})
 
-    var newContent = await fetch(`https://api.tenor.com/v1/search?q=${apiKey}&key=${config.tenorKey}&limit=${config.contentLimit}`)
+    var newContent = await fetch(`https://api.tenor.com/v1/search?q=${config.contentKeyword}&key=${apiKey}&limit=${config.contentLimit}`)
     .then(res => res.json())
 
     newContent = newContent.results.map(res => ({
