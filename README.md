@@ -1,3 +1,5 @@
+![](showcase.gif)
+
 ## Quick Start
 
 ``` bash
