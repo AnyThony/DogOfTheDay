@@ -47,7 +47,7 @@ class App extends Component {
       data: []
     })
     // TODO: replace window origin with something better to get hostname
-    this._asyncRequest = fetch(window.location.origin + 'http://localhost/api/getMedia').then(
+    this._asyncRequest = fetch(window.location.origin + '/api/getMedia').then(
       externalData => {
         this._asyncRequest = null;
         externalData.json().then(parsedData => {
