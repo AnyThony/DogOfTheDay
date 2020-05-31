@@ -15,7 +15,8 @@ class Media extends Component {
   }
 
   async doVote(){
-    const rawResponse = await fetch('http://localhost/api/vote', {
+    // TODO: replace window origin with something better to get hostname
+    const rawResponse = await fetch(window.location.origin + '/api/vote', {
       method: this.props.enableUnvote ? 'delete' : 'post',
       headers: {
         'Accept': 'application/json',

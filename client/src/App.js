@@ -17,7 +17,8 @@ class App extends Component {
   }
 
   checkForVotes(){ // Checks if user has already made a vote earlier
-    var _asyncRequest = fetch(`http://localhost/api/vote`).then(
+    // TODO: replace window origin with something better to get hostname
+    var _asyncRequest = fetch(window.location.origin + '/api/vote').then(
       externalData => {
         _asyncRequest = null;
         externalData.json().then(parsedData => {
