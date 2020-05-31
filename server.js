@@ -21,7 +21,7 @@ app.listen(port, () => `Server running on port ${port}`);
 
 async function connectDB() {
   
-  await mongoose.connect(config.mongoConnection, 
+  await mongoose.connect(process.env.DB_STRING || config.mongoConnection, 
   { 
     useUnifiedTopology: true, 
     useNewUrlParser: true 

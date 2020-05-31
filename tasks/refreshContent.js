@@ -6,6 +6,8 @@ const vote = require("../models/vote.js")
 const dailyContent = require("../models/dailyContent.js")
 const config = require("../config.js")
 
+let apiKey = process.env.TENOR_KEY || config.tenorKey;
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
