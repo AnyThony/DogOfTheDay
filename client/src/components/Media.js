@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "./Media.css"
 /*
-* This component contains the media content for each daily dogo
+* This component contains the media content for each daily doggo
 * Handles voting action and displaying number of votes
 */
 class Media extends Component {
@@ -11,6 +11,31 @@ class Media extends Component {
       imageSource: null,
       numVotes: null,
       mediaId: null
+    }
+  }
+
+  async doVote(){
+    const rawResponse = await fetch('http://localhost/api/vote', {
+      method: this.props.enableUnvote ? 'delete' : 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        'media_id': this.state.mediaId
+      })
+    });
+    const response = await rawResponse.json();
+
+    if (response.success){
+      this.setState({
+        numVotes: this.state.numVotes + (this.props.enableUnvote ? -1 : 1)
+      })
+      var votedFor = this.props.enableUnvote ? null : this.state.mediaId;
+      this.props.onVote(this.props.enableUnvote, votedFor);
+    }
+    else {
+      //TODO: notify err
     }
   }
 
@@ -34,11 +59,13 @@ class Media extends Component {
 
             </div>
             <div class="card-content">
-              <p>{this.state.numVotes} votes</p>
+              <p>{`${this.state.numVotes} ${this.state.numVotes == 1 ? "vote" : "votes"}`}</p>
             </div>
             <div class="card-action">
-              <a class="waves-effect waves-light btn-small">
-                <span>VOTE</span>
+              <a class={`waves-effect waves-light btn-small 
+              ${this.props.disableVoting && !this.props.enableUnvote ? "disabled" : ""}`} 
+              onClick={() => this.doVote()}>
+                <span>{this.props.enableUnvote ? "UNVOTE" : "VOTE"}</span>
               </a>
             </div>
           </div>

@@ -7,7 +7,40 @@ import NavBar from './components/NavBar'
 class App extends Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      data: [],
+      userCanVote: false,
+      currentVote: null
+    }
+    this.onVote = this.onVote.bind(this);
   }
+
+  checkForVotes(){ // Checks if user has already made a vote earlier
+    var _asyncRequest = fetch(`http://localhost/api/vote`).then(
+      externalData => {
+        _asyncRequest = null;
+        externalData.json().then(parsedData => {
+          var votedFor = ""
+          if (parsedData.data.length > 0){
+            votedFor = parsedData.data[0].media_id
+          }
+          this.setState({
+            userCanVote: parsedData.data.length == 0,
+            currentVote: votedFor
+          });
+        })
+      }
+    );
+  }
+
+  onVote(canVote, votedFor){
+    this.setState({
+      userCanVote: canVote,
+      currentVote: votedFor
+    })
+  }
+
   componentWillMount() {
     this.setState({
       data: []
@@ -18,6 +51,7 @@ class App extends Component {
         this._asyncRequest = null;
         externalData.json().then(parsedData => {
           this.setState({data: parsedData});
+          this.checkForVotes();
           console.log(`fetched ${parsedData.length} cells`)
         })
       }
@@ -29,13 +63,14 @@ class App extends Component {
     console.log("cell", this.state.data)
     let cells = this.state.data.map(data => 
       (
-
           <Media
             imageSource={data.img_source}
             id={data._id}
             votes={data.votes}
+            disableVoting={this.state.userCanVote == false}
+            enableUnvote={this.state.currentVote == data._id}
+            onVote={this.onVote}
           />
-
       )
     )
     console.log("element cells", cells)

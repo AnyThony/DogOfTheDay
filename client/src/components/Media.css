@@ -25,6 +25,13 @@
     display: block;
 }
 
+.card-content{
+    padding: 0 !important;
+    padding-top: 6px !important;
+    text-align: center;
+    font-size: 18px;
+}
+
 .card-image img{
     margin: auto;
     display: block;

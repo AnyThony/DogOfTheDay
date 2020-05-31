@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const config = require("./config.js")
 const app = express();
 const cron = require("node-cron");
-
+var cors = require('cors');
 let refreshContentJob = require("./tasks/refreshContent.js");
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 //Enable CORS for client
-app.use(function (req, res, next){
-  res.setHeader('Access-Control-Allow-Origin',  "http://localhost:3000");
-  next();
-})
+app.use(cors());
 app.use("/api", require("./routes/api.js"));
 
 const port = 80;
@@ -17,7 +17,8 @@ app.listen(port, () => `Server running on port ${port}`);
 
 
 async function connectDB() {
-  await mongoose.connect('mongodb://localhost:27017/DogOfTheDay', 
+  
+  await mongoose.connect(config.mongoConnection, 
   { 
     useUnifiedTopology: true, 
     useNewUrlParser: true 
