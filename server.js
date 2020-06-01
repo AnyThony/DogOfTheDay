@@ -10,6 +10,8 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 //Enable CORS for client
 app.use(cors());
+
+app.set('trust proxy', true)
 app.use("/api", require("./routes/api.js"));
 app.use(express.static(path.join(__dirname, 'build')));
 
