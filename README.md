@@ -1,6 +1,6 @@
 ![](showcase.gif)
 
-## Quick Start
+## Setup:
 
 ``` bash
 In config.js, replace API_KEY_HERE with your tenor api key
@@ -11,21 +11,9 @@ npm install
 # Install dependencies for client
 npm run client-install
 
-# Run the client & server with concurrently
-npm run dev
-
-# Run the Express server only
+# Run the server
 npm run server
-
-# Run the React client only
-npm run client
-
-# Server runs on http://localhost:5000 and client on http://localhost:3000
 ```
-
-1.0.0
-
-Thanks to Brad Traversy for the React Starter Code
 
 ### License
 
